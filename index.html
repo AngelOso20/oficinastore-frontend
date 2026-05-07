@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OficinaStore - Articulos de Oficina</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <header class="encabezado">
+        <div class="contenedor-encabezado">
+            <div class="logo">
+                <svg viewBox="0 0 24 24" width="40" height="40" fill="currentColor">
+                    <path d="M20 2H4c-1.1 0-2 .9-2 2v3.01c0 .27.11.52.29.71l3.71 3.7c.19.19.44.29.71.29h9.18c.53 0 1.04-.21 1.41-.59l.71-.71V4c0-1.1-.9-2-2-2zm-1 14H5c-.55 0-1-.45-1-1V5c0-.55.45-1 1-1h14c.55 0 1 .45 1 1v9.18c-.39-.39-.88-.58-1.41-.58h-.18zM8 16h8v2H8v-2z"/>
+                </svg>
+                <h1>OficinaStore</h1>
+            </div>
+            <p class="subtitulo">Sistema de Articulos de Oficina</p>
+        </div>
+    </header>
+
+    <div id="estado-conexion" class="estado-conexion desconectado">
+        <span class="punto-estado"></span>
+        <span id="mensaje-conexion">Conectando con el servidor...</span>
+    </div>
+
+    <main class="contenedor-principal">
+        <section class="seccion-filtros">
+            <div class="filtros">
+                <div class="grupo-filtro">
+                    <label for="filtro-categoria">Filtrar por categoria:</label>
+                    <select id="filtro-categoria" class="selector">
+                        <option value="">Todas las categorias</option>
+                    </select>
+                </div>
+                <div class="grupo-filtro">
+                    <input type="text" id="buscador" class="entrada-buscador"
+                           placeholder="Buscar articulo...">
+                </div>
+                <button id="btn-actualizar" class="boton boton-primario">
+                    <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
+                        <path d="M17.65 6.35C16.2 4.9 14.21 4 12 4c-4.42 0-7.99 3.58-7.99 8s3.57 8 7.99 8c3.73 0 6.84-2.55 7.73-6h-2.08c-.82 2.33-3.04 4-5.65 4-3.31 0-6-2.69-6-6s2.69-6 6-6c1.66 0 3.14.69 4.22 1.78L13 11h7V4l-2.35 2.35z"/>
+                    </svg>
+                    Actualizar
+                </button>
+            </div>
+        </section>
+
+        <div class="info-resultados">
+            <span id="contador-articulos">Cargando articulos...</span>
+        </div>
+
+        <section id="contenedor-articulos" class="cuadricula-articulos">
+        </section>
+
+        <div id="indicador-carga" class="indicador-carga">
+            <div class="spinner"></div>
+            <p>Cargando articulos...</p>
+        </div>
+
+        <div id="mensaje-error" class="mensaje-error">
+            <svg viewBox="0 0 24 24" width="48" height="48" fill="currentColor">
+                <path d="M1 21h22L12 2 1 21zm12-3h-2v-2h2v2zm0-4h-2v-4h2v4z"/>
+            </svg>
+            <p id="texto-error"></p>
+            <button id="btn-reintentar" class="boton boton-secundario">Reintentar</button>
+        </div>
+    </main>
+
+    <footer class="pie-pagina">
+        <p>OficinaStore - Despliegue Frontend-Backend en Maquinas Virtuales</p>
+        <p class="info-tecnica">
+            Frontend: <span id="info-frontend">Puerto 8080</span> |
+            Backend: <span id="info-backend">Puerto 3000</span>
+        </p>
+    </footer>
+
+    <script src="js/app.js"></script>
+</body>
+</html>
